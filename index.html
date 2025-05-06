@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sisipho Andries | Portfolio</title>
+  <style>
+    .about-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .about-description {
+      margin-bottom: 15px;
+      line-height: 1.8;
+      color: var(--secondary);
+      text-align: justify;
+    }
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #64748b;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #e2e8f0;
+      --success: #10b981;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background-color: var(--dark);
+      color: white;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 30px;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 150px 0 100px;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: white;
+      color: var(--primary);
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      margin: 10px;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .social-links {
+      margin-top: 30px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.2);
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      background-color: white;
+      color: var(--primary);
+    }
+    
+    /* About Section */
+    .section {
+      padding: 100px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 36px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background-color: var(--primary);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+    
+    .about-img {
+      flex: 1;
+      text-align: center;
+    }
+    
+    .about-img img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary);
+    }
+    
+    .about-text {
+      flex: 1;
+    }
+    
+    .about-text h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    /* Skills Section */
+    .skills {
+      background-color: var(--gray);
+    }
+    
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    
+    .skill-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .skill-card h3 {
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    
+    .skill-card ul {
+      list-style: none;
+      text-align: left;
+      margin-top: 20px;
+    }
+    
+    .skill-card li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .skill-card li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+    
+    /* Experience Section */
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: var(--primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: var(--light);
+      border: 4px solid var(--primary);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .left {
+      left: 0;
+    }
+    
+    .right {
+      left: 50%;
+    }
+    
+    .right::after {
+      left: -16px;
+    }
+    
+    .timeline-content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .timeline-content h3 {
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+    
+    .timeline-content .date {
+      font-size: 14px;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+    
+    .timeline-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .timeline-content li {
+      margin-bottom: 5px;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .timeline-content li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+    
+    /* Education Section */
+    .education {
+      background-color: var(--gray);
+    }
+    
+    .education-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    
+    .education-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      width: 350px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    
+    .education-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .education-card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    
+    .education-card p {
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+    
+    /* Certifications Section */
+    .certifications {
+      text-align: center;
+    }
+    
+    .certifications-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    
+    .certification-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    
+    .certification-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .certification-card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    
+    .certification-card p {
+      color: var(--secondary);
+      font-size: 14px;
+    }
+    
+    /* Contact Section */
+    .contact {
+      background-color: var(--dark);
+      color: white;
+    }
+    
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+    }
+    
+    .contact-info {
+      flex: 1;
+    }
+    
+    .contact-info p {
+      margin-bottom: 20px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .contact-item i {
+      margin-right: 20px;
+      font-size: 24px;
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .contact-form {
+      flex: 1;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: rgba(255,255,255,0.1);
+      color: white;
+    }
+    
+    .form-control::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .btn-submit {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    
+    .btn-submit:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    
+    /* Responsive */
+    @media (max-width: 968px) {
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item::after {
+        left: 15px;
+      }
+      
+      .right {
+        left: 0;
+      }
+      
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Sisipho Andries</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#Projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero" style="padding: 100px 0;">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+        <div class="about-img">
+          <img src="Sisipho Andries.jpg" alt="Sisipho Andries" style="width: 350px; height: 350px;">
+        </div>
+        <div>
+          <h1 style="font-size: 36px;">Welcome to My Portfolio</h1>
+          <p style="font-size: 16px;">I am Sisipho Andries, a passionate software developer 
+          <p style="font-size: 16px;">with expertise in full-stack development, and a self thought Data Analyst.</p>
+          <p style="font-size: 16px;">Explore my journey, skills, and projects as I continue to grow in the tech industry.</p>
+          <a href="#contact" class="btn">Contact Me</a>
+          <a href="#about" class="btn">Learn More</a>
+            <div class="social-links" style="margin-top: 15px; display: flex; gap: 15px; justify-content: center;">
+            <a href="https://github.com/SisiphoA-collab" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/sisipho-andries-869160192/" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .about-img img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary);
+    }
+
+    .about-text {
+      flex: 1;
+      text-align: justify;
+    }
+
+    .about-text h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      line-height: 1.8;
+      color: var(--secondary);
+    }
+  </style>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <div class="section-title">
+        <h2>Technical Skills</h2>
+      </div>
+      <div class="skills-container">
+        <div class="skill-card">
+          <h3>Programming Languages</h3>
+          <ul>
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Frameworks & Libraries</h3>
+          <ul>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>Hibernate</li>
+            <li>Bootstrap</li>
+            <li>HTML</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Databases & Tools</h3>
+          <ul>
+            <li>MySQL</li>
+            <li>MS SQL</li>
+            <li>SQL Server</li>
+            <li>MongoDB</li>
+            <li>Git</li>
+            <li>Windows OS</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Data Analysis</h3>
+          <ul>
+            <li>Excel</li>
+            <li>Tableau</li>
+            <li>Power BI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Work Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>Junior Software Developer</h3>
+            <p class="date">December 2024 - Present</p>
+            <p><strong>UVU Africa - Capaciti</strong></p>
+            <ul>
+              <li>Executing full software development life cycle (SDLC)</li>
+              <li>Documenting software design, architecture, and development processes</li>
+              <li>Debugging and resolving software issues</li>
+              <li>Working with version control system (Git)</li>
+              <li>Collaborating with the team to write well-designed and testable code</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>Junior Full Stack Java Developer</h3>
+            <p class="date">November 2022 - October 2024</p>
+            <p><strong>Deviare</strong></p>
+            <ul>
+              <li>Writing clean, efficient, and maintainable code</li>
+              <li>Developing web applications using Java, JavaScript, React, and Node.js</li>
+              <li>Building RESTful APIs and enterprise-grade practices</li>
+              <li>Writing and executing unit tests</li>
+              <li>Employing Postman for API testing and development</li>
+              <li>Working with Eclipse, MySQL workbench, Spring tool suite 4</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>Web Developer Intern</h3>
+            <p class="date">May 2020 - October 2021</p>
+            <p><strong>Loomee Group</strong></p>
+            <ul>
+              <li>Assisted in web application development using JavaScript and React</li>
+              <li>WordPress development</li>
+              <li>Modified existing websites to detect and correct errors</li>
+              <li>Improved website traffic rankings</li>
+              <li>Consulted with clients regarding projects</li>
+              <li>Uploaded website files on CPanel</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section education">
+    <div class="container">
+      <div class="section-title">
+        <h2>Education</h2>
+      </div>
+      <div class="education-container">
+        <div class="education-card">
+          <h3>BSc Honours: Computing, Computer programming</h3>
+          <p>University of South Africa (UNISA)</p>
+          <p>In progress (2025)</p>
+        </div>
+        <div class="education-card">
+          <h3>Bachelor of Technology: Information Technology</h3>
+          <p>Walter Sisulu University</p>
+          <p>Software Development</p>
+          <p>2020</p>
+        </div>
+        <div class="education-card">
+          <h3>National Diploma: Information Technology</h3>
+          <p>Walter Sisulu University</p>
+          <p>Software Development</p>
+          <p>2018</p>
+        </div>
+        <div class="education-card">
+          <h3>Matric</h3>
+          <p>Zwelivumile Senior Secondary School</p>
+          <p>2012</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="Certifications" class="section certifications">
+    <div class="container">
+      <div class="section-title">
+        <h2>Certifications</h2>
+      </div>
+      <div class="certifications-container">
+        <div class="certification-card">
+          <h3>Advanced Microsoft Excel</h3>
+          <p>SpecCon Holdings</p>
+        </div>
+        <div class="certification-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="https://via.placeholder.com/50" alt="AI Icon" style="border-radius: 50%; width: 50px; height: 50px;">
+            <h3>Artificial Intelligence</h3>
+          </div>
+          <p>Coursera</p>
+        </div>
+        <div class="certification-card">
+          <h3>Mock Portfolio Picture</h3>
+          <img src="https://via.placeholder.com/250" alt="Mock Portfolio Picture" style="width:100%; border-radius:10px;">
+        </div>
+        <div class="certification-card">
+          <h3>Programming with Java</h3>
+          <p>Amazon with Coursera</p>
+        </div>
+        <div class="certification-card">
+          <h3>Data Structures and Algorithms</h3>
+          <p>Amazon with Coursera</p>
+        </div>
+        <div class="certification-card">
+          <h3>Introduction to Software Development</h3>
+          <p>Amazon with Coursera</p>
+        </div>
+        <div class="certification-card">
+          <h3>Python Essentials 1 and 2</h3>
+          <p>Networking Academy</p>
+        </div>
+        <div class="certification-card">
+          <h3>Data Analytics Essentials</h3>
+          <p>Networking Academy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Projects</h2>
+      </div>
+      <div class="certifications-container">
+        <div class="certification-card">
+          <h3>Portfolio Website</h3>
+          <p>A personal portfolio website showcasing my skills, projects, and experience. Built with HTML, CSS, and JavaScript.</p>
+          <div class="tech-stack">
+            <span class="tech-btn">HTML</span>
+            <span class="tech-btn">CSS</span>
+            <span class="tech-btn">JavaScript</span>
+          </div>
+        </div>
+        <div class="certification-card">
+          <h3>Essentialle Salon and Beauty Web App</h3>
+          <p>A web app designed for beauty enthusiasts to view the products online, book appointments and order online for collection.</p>
+          <div class="tech-stack">
+            <span class="tech-btn">React</span>
+            <span class="tech-btn">Node.js</span>
+            <span class="tech-btn">Express.js</span>
+          </div>
+          <a href="https://www.essentialle.co.za/" target="_blank" class="btn" style="margin-top: 15px; display: inline-block; background-color: var(--primary); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s;">View Project</a>  
+        </div>
+        <div class="certification-card">
+          <h3>Coffee Shop Drive-Thru</h3>
+          <p>An online shopping platform with user authentication, product listings, and a shopping cart. Built with Java and Spring Boot.</p>
+          <div class="tech-stack">
+            <span class="tech-btn">Java</span>
+            <span class="tech-btn">Spring Boot</span>
+            <span class="tech-btn">MySQL</span>
+          </div>
+        </div>
+        <div class="certification-card">
+          <h3>Primary School Mathematics Flash Card Game</h3>
+          <p>A fantastic game for primary school learners to enjoy while learning and advancing their maths skills.</p>
+          <div class="tech-stack">
+            <span class="tech-btn">HTML</span>
+            <span class="tech-btn">CSS</span>
+          </div>
+          <a href="https://sisiphoa-collab.github.io/index.html/" target="_blank" class="btn" style="margin-top: 15px; display: inline-block; background-color: var(--primary); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s;">View Project</a>
+        </div>
+        </div>
+        <div class="certification-card">
+          <h3>Blog Platform</h3>
+          <p>A blogging platform where users can create, edit, and delete posts. Built with Python and Flask.</p>
+          <div class="tech-stack">
+            <span class="tech-btn">Python</span>
+            <span class="tech-btn">Flask</span>
+            <span class="tech-btn">SQLite</span>
+          </div>
+        </div>
+        <div class="certification-card">
+          <h3>Data Visualization Tool</h3>
+          <p>A tool for visualizing data using interactive charts and graphs. Developed with Python and Tableau.</p>
+          <div class="tech-stack">
+            <span class="tech-btn">Python</span>
+            <span class="tech-btn">Tableau</span>
+            <span class="tech-btn">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .tech-stack {
+      margin-top: 15px;
+    }
+
+    .tech-btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .tech-btn:hover {
+      background-color: var(--primary-dark);
+    }
+  </style>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Me</h2>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <p>Feel free to reach out if you'd like to collaborate or have any questions.</p>
+          <div class="contact-item">
+            <i>📧</i>
+            <p>sisiphoandries@gmail.com</p>
+          </div>
+          <div class="contact-item">
+            <i>📱</i>
+            <p>067 691 2778 / 079 351 1010</p>
+          </div>
+          <div class="contact-item">
+            <i>📍</i>
+            <p>23 Flame Street, Mandalay, Cape Town, 7785</p>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Subject">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Sisipho Andries. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
