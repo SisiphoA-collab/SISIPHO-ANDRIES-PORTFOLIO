@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sisipho Andries | Stellar Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
   <style>
     :root {
       --primary: #4f46e5;
@@ -265,13 +262,7 @@
       width: 300px;
       box-shadow: var(--shadow);
       text-align: center;
-      transition: all 0.3s;
       border: 1px solid var(--glass-bg);
-    }
-
-    .skill-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     }
 
     .skill-card h3 {
@@ -357,11 +348,6 @@
       backdrop-filter: blur(10px);
       border-radius: 15px;
       box-shadow: var(--shadow);
-      transition: transform 0.3s;
-    }
-
-    .timeline-content:hover {
-      transform: scale(1.05);
     }
 
     .timeline-content h3 {
@@ -414,13 +400,7 @@
       padding: 30px;
       width: 300px;
       box-shadow: var(--shadow);
-      transition: all 0.3s;
       border: 1px solid var(--neon);
-    }
-
-    .education-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     }
 
     .education-card h3 {
@@ -453,13 +433,7 @@
       padding: 25px;
       width: 250px;
       box-shadow: var(--shadow);
-      transition: all 0.3s;
       border: 1px solid var(--glass-bg);
-    }
-
-    .certification-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     }
 
     .certification-card h3 {
@@ -479,7 +453,6 @@
       color: var(--neon);
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s;
       padding: 8px 15px;
       border-radius: 5px;
       border: 1px solid var(--neon);
@@ -510,32 +483,9 @@
       padding: 25px;
       width: 250px;
       box-shadow: var(--shadow);
-      transition: all 0.3s;
       border: 1px solid var(--glass-bg);
       position: relative;
       overflow: hidden;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient);
-      opacity: 0;
-      transition: opacity 0.3s;
-      z-index: -1;
-    }
-
-    .project-card:hover::before {
-      opacity: 0.1;
     }
 
     .project-card h3 {
@@ -555,7 +505,6 @@
       color: var(--neon);
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s;
       padding: 8px 15px;
       border-radius: 5px;
       border: 1px solid var(--neon);
@@ -580,7 +529,6 @@
       font-size: 12px;
       margin: 5px;
       font-weight: 600;
-      transition: all 0.3s;
       border: 1px solid var(--neon);
     }
 
@@ -734,6 +682,7 @@
   <!-- Header -->
   <header>
     <div class="container">
+      catalogue
       <nav>
         <div class="logo">Sisipho Andries</div>
         <ul class="nav-links">
@@ -773,7 +722,7 @@
         <h2>Technical Skills</h2>
       </div>
       <div class="skills-container">
-        <div class="skill-card" data-tilt>
+        <div class="skill-card">
           <h3>Programming Languages</h3>
           <ul>
             <li>Java</li>
@@ -782,7 +731,7 @@
             <li>SQL</li>
           </ul>
         </div>
-        <div class="skill-card" data-tilt>
+        <div class="skill-card">
           <h3>Frameworks & Libraries</h3>
           <ul>
             <li>React</li>
@@ -793,7 +742,7 @@
             <li>HTML</li>
           </ul>
         </div>
-        <div class="skill-card" data-tilt>
+        <div class="skill-card">
           <h3>Databases & Tools</h3>
           <ul>
             <li>MySQL</li>
@@ -804,7 +753,7 @@
             <li>Windows OS</li>
           </ul>
         </div>
-        <div class="skill-card" data-tilt>
+        <div class="skill-card">
           <h3>Data Analysis</h3>
           <ul>
             <li>Excel</li>
@@ -878,24 +827,24 @@
         <h2>Education</h2>
       </div>
       <div class="education-container">
-        <div class="education-card" data-tilt>
+        <div class="education-card">
           <h3>BSc Honours: Computing</h3>
           <p><a href="https://www.unisa.ac.za/sites/corporate/default" target="_blank" style="color: var(--neon); text-decoration: none;">University of South Africa</a></p>
           <p>In progress (2025)</p>
         </div>
-        <div class="education-card" data-tilt>
+        <div class="education-card">
           <h3>Bachelor of Technology: IT</h3>
           <p><a href="https://www.wsu.ac.za/index.php/en/" target="_blank" style="color: var(--neon); text-decoration: none;">Walter Sisulu University</a></p>
           <p>Software Development</p>
           <p>2020</p>
         </div>
-        <div class="education-card" data-tilt>
+        <div class="education-card">
           <h3>National Diploma: IT</h3>
           <p><a href="https://www.wsu.ac.za/index.php/en/" target="_blank" style="color: var(--neon); text-decoration: none;">Walter Sisulu University</a></p>
           <p>Software Development</p>
           <p>2018</p>
         </div>
-        <div class="education-card" data-tilt>
+        <div class="education-card">
           <h3>Matric</h3>
           <p><a href="https://www.school-register.co.za/school/zwelivumile-senior-secondary-school/" target="_blank" style="color: var(--neon); text-decoration: none;">Zwelivumile Senior Secondary School</a></p>
           <p>2012</p>
@@ -911,53 +860,53 @@
         <h2>Certifications</h2>
       </div>
       <div class="certifications-container">
-        <div class="certification-card" data-tilt>
+        <div class="certification-card">
           <h3>Advanced Microsoft Excel</h3>
           <p>SpecCon Holdings</p>
           <a href="Get_your_certificate.pdf" target="_blank">View Certificate</a>
         </div>
-        <div class="certification-card" data-tilt>
+        <div class="certification-card">
           <h3>Generative AI: Introduction</h3>
           <p>Coursera</p>
           <a href="https://www.coursera.org/account/accomplishments/certificate/MK1761TQEQBL" target="_blank">View Certificate</a>
         </div>
-        <div class="certification-card" data-tilt>
+        <div class="certification-card">
           <h3>AI Powered Chatbots</h3>
           <p>Coursera</p>
           <a href="https://www.coursera.org/account/accomplishments/certificate/X32ATTUQ8638" target="_blank">View Certificate</a>
         </div>
-        <div class="certification-card" data-tilt>
+        <div class="certification-card">
           <h3>Programming with Java</h3>
           <p>Amazon</p>
           <a href="https://www.coursera.org/account/accomplishments/certificate/TJ3J42E00O7J" target="_blank">View Certificate</a>
         </div>
-        <div class="certification-card" data-tilt>
+        <div class="certification-card">
           <h3>Data Structures and Algorithms</h3>
           <p>Amazon with Coursera</p>
           <a href="certificates/data-structures-and-algorithms.pdf" target="_blank">View Certificate</a>
         </div>
-        <div class="certification-card" data-tilt>
+        <div class="certification-card">
           <h3>Intro to Software Development</h3>
           <p>Amazon with Coursera</p>
           <a href="https://www.coursera.org/account/accomplishments/certificate/TWJHZPMA5RHQ" target="_blank">View Certificate</a>
         </div>
-        <div class="certification-card" data-tilt>
+        <div class="certification-card">
           <h3>Prompt Engineering Basics</h3>
           <p>Coursera</p>
           <a href="https://www.coursera.org/account/accomplishments/certificate/TED9SIBCRX7M" target="_blank">View Certificate</a>
         </div>
-        <div class="certification-card" data-tilt>
+        <div class="certification-card">
           <h3>Data Analytics Essentials</h3>
           <p>Networking Academy</p>
           <a href="DataAnalyticsEssentialsUpdate20250507-28-ty9e3p.pdf" target="_blank">View Certificate</a>
         </div>
-        <div class="certification-card" data-tilt>
+        <div class="certification-card">
           <h3>Python Essentials 1 and 2</h3>
           <p>Python Institute</p>
           <a href="PythonEssentials1Update20250507-26-gwtlxy.pdf" target="_blank">View Certificate 1</a>
           <a href="PythonEssentials2Update20250507-27-g85tbb.pdf" target="_blank">View Certificate 2</a>
         </div>
-        <div class="certification-card" data-tilt>
+        <div class="certification-card">
           <h3>IT System Support</h3>
           <p>SpecCon Holdings</p>
           <a href="Certificate_in_Business_Administration_Level_3.pdf" target="_blank">View Certificate</a>
@@ -973,7 +922,7 @@
         <h2>Projects</h2>
       </div>
       <div class="projects-container">
-        <div class="project-card" data-tilt>
+        <div class="project-card">
           <h3>Portfolio Website</h3>
           <p>A personal portfolio showcasing my skills, projects, and experience.</p>
           <div class="tech-stack">
@@ -983,7 +932,7 @@
           </div>
           <a href="https://sisiphoa-collab.github.io/SISIPHO-ANDRIES-PORTFOLIO/" target="_blank">View Project</a>
         </div>
-        <div class="project-card" data-tilt>
+        <div class="project-card">
           <h3>Essentialle Salon Web App</h3>
           <p>A web app for beauty enthusiasts to book appointments and order products.</p>
           <div class="tech-stack">
@@ -991,7 +940,7 @@
           </div>
           <a href="https://www.essentialle.co.za/" target="_blank">View Project</a>
         </div>
-        <div class="project-card" data-tilt>
+        <div class="project-card">
           <h3>Resource Digital Request</h3>
           <p>An online shopping platform with authentication and cart features.</p>
           <div class="tech-stack">
@@ -1001,17 +950,17 @@
           </div>
           <a href="https://sisiphoa-collab.github.io/index.html/" target="_blank">View Project</a>
         </div>
-        <div class="project-card" data-tilt>
+        <div class="project-card">
           <h3>Math Flash Card Game</h3>
           <p>A game for primary school learners to enhance math skills.</p>
           <div class="tech-stack">
             <span class="tech-btn">HTML</span>
             <span class="tech-btn">CSS</span>
-            <span class="tech-btn">JavaScript</span>
+            <span class.="tech-btn">JavaScript</span>
           </div>
           <a href="https://sisiphoa-collab.github.io/index.html/" target="_blank">View Project</a>
         </div>
-        <div class="project-card" data-tilt>
+        <div class="project-card">
           <h3>Blog Platform</h3>
           <p>A platform for users to create, edit, and delete blog posts.</p>
           <div class="tech-stack">
@@ -1082,40 +1031,6 @@
       document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
       themeToggle.querySelector('i').classList.toggle('fa-moon');
       themeToggle.querySelector('i').classList.toggle('fa-sun');
-    });
-
-    // GSAP Animations
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Hero Animation
-    gsap.from('.hero h1', { opacity: 0, y: 50, duration: 1, delay: 0.5 });
-    gsap.from('.hero p', { opacity: 0, y: 50, duration: 1, delay: 0.7 });
-    gsap.from('.hero .btn', { opacity: 0, y: 50, duration: 1, delay: 0.9, stagger: 0.2 });
-    gsap.from('.hero .social-links a', { opacity: 0, scale: 0, duration: 1, delay: 1.1, stagger: 0.2 });
-
-    // Section Animations
-    document.querySelectorAll('.section').forEach(section => {
-      gsap.from(section.querySelector('.section-title'), {
-        scrollTrigger: section,
-        opacity: 0,
-        y: 50,
-        duration: 1
-      });
-      gsap.from(section.querySelectorAll('.skill-card, .timeline-item, .education-card, .certification-card, .project-card'), {
-        scrollTrigger: section,
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        stagger: 0.2
-      });
-    });
-
-    // Vanilla Tilt for Cards
-    VanillaTilt.init(document.querySelectorAll('[data-tilt]'), {
-      max: 15,
-      speed: 400,
-      glare: true,
-      'max-glare': 0.5
     });
 
     // Form Validation
