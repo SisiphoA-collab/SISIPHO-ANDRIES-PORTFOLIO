@@ -203,12 +203,29 @@
       text-decoration: none;
       transition: all 0.3s;
       border: 1px solid var(--neon);
+      font-size: 24px;
     }
 
     .social-links a:hover {
       background: var(--neon);
       color: var(--dark);
       transform: rotate(360deg);
+    }
+
+    /* Social Links Specific Styles */
+    .social-links .linkedin:hover {
+      background: #0a66c2;
+      border-color: #0a66c2;
+    }
+
+    .social-links .github:hover {
+      background: #333;
+      border-color: #333;
+    }
+
+    .social-links .email:hover {
+      background: #d14836;
+      border-color: #d14836;
     }
 
     /* Section Styles */
@@ -575,10 +592,30 @@
       align-items: center;
       justify-content: center;
       color: var(--dark);
+      transition: all 0.3s;
     }
 
-    .contact-form {
-      flex: 1;
+    .contact-item a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .contact-item a:hover {
+      color: var(--neon);
+    }
+
+    .contact-item.linkedin i:hover {
+      background: #0a66c2;
+    }
+
+    .contact-item.github i:hover {
+      background: #333;
+    }
+
+    .contact-item.email i:hover {
+      background: #d14836;
     }
 
     .form-group {
@@ -682,7 +719,6 @@
   <!-- Header -->
   <header>
     <div class="container">
-      catalogue
       <nav>
         <div class="logo">Sisipho Andries</div>
         <ul class="nav-links">
@@ -706,6 +742,11 @@
       </div>
       <h1>Welcome to My Stellar Portfolio</h1>
       <p>Hi, I'm a Software Developer who crafts digital experiences with code and curiosity. From sleek web apps to bug-busting adventures, I thrive on turning ideas into reality.</p>
+      <div class="social-links" style="margin-top: 30px;">
+        <a href="https://www.linkedin.com/in/sisipho-andries-869160192" target="_blank" aria-label="LinkedIn" class="linkedin"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/SisiphoA-collab" target="_blank" aria-label="GitHub" class="github"><i class="fab fa-github"></i></a>
+        <a href="mailto:sisiphoandries@gmail.com" aria-label="Email" class="email"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
   </section>
 
@@ -835,12 +876,7 @@
         <div class="education-card">
           <h3>National Diploma: IT</h3>
           <p><a href="https://www.wsu.ac.za/index.php/en/" target="_blank" style="color: var(--neon); text-decoration: none;">Walter Sisulu University</a></p>
-          <p>Software Development</p>
-          <p>2018</p>
-        </div>
-        <div class="education-card">
-          <h3>Matric</h3>
-          <p><a href="https://www.school-register.co.za/school/zwelivumile-senior-secondary-school/" target="_blank" style="color: var(--neon); text-decoration: none;">Zwelivumile Senior Secondary School</a></p>
+          < telecommunication: none;">Zwelivumile Senior Secondary School</a></p>
           <p>2012</p>
         </div>
       </div>
@@ -982,9 +1018,9 @@
       <div class="contact-container">
         <div class="contact-info">
           <p>Let's collaborate to turn your ideas into reality. Reach out anytime!</p>
-          <div class="contact-item">
+          <div class="contact-item email">
             <i class="fas fa-envelope"></i>
-            <p>sisiphoandries@gmail.com</p>
+            <a href="mailto:sisiphoandries@gmail.com" aria-label="Email">sisiphoandries@gmail.com</a>
           </div>
           <div class="contact-item">
             <i class="fas fa-phone"></i>
@@ -993,6 +1029,14 @@
           <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
             <p>Western Cape, Cape Town</p>
+          </div>
+          <div class="contact-item linkedin">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/sisipho-andries-869160192" target="_blank" aria-label="LinkedIn">LinkedIn Profile</a>
+          </div>
+          <div class="contact-item github">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/SisiphoA-collab" target="_blank" aria-label="GitHub">GitHub Profile</a>
           </div>
         </div>
         <div class="contact-form">
